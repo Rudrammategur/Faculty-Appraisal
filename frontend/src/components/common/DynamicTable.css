@@ -1,0 +1,167 @@
+.dynamic-table {
+  width: 100%;
+  border: 1px solid #dedfe3;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #fff;
+}
+
+.dynamic-table-scroll {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.dynamic-table-grid {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.dynamic-table-grid th {
+  padding: 10px 10px;
+  background: #fafafa;
+
+  border-right: 1px solid #dedfe3;
+  border-bottom: 1px solid #dedfe3;
+
+  color: #3f424a;
+  font-size: 11px;
+  font-weight: 750;
+
+  text-align: center;
+  vertical-align: middle;
+
+  white-space: normal;
+  overflow-wrap: break-word;
+  word-break: normal;
+
+  line-height: 1.35;
+}
+
+.dynamic-table-grid td {
+  padding: 7px;
+  border-right: 1px solid #e8e8eb;
+  border-bottom: 1px solid #e8e8eb;
+  vertical-align: middle;
+}
+
+.dynamic-table-grid tbody tr:last-child td {
+  border-bottom: none;
+}
+
+
+/* Inputs */
+
+.dynamic-table-grid input,
+.dynamic-table-grid select {
+  width: 100%;
+  height: 35px;
+
+  padding: 7px 8px;
+
+  border: 1px solid #dfe1e5;
+  border-radius: 5px;
+
+  background: #fff;
+
+  font-size: 11px;
+  color: #292b32;
+
+  outline: none;
+}
+
+.dynamic-table-grid input:focus,
+.dynamic-table-grid select:focus {
+  border-color: #8c5aaa;
+  box-shadow: 0 0 0 2px rgba(91, 42, 134, 0.08);
+}
+
+/* Database field */
+
+.db-value-cell {
+  min-height: 35px;
+
+  display: flex;
+  align-items: center;
+
+  padding: 7px 8px;
+
+  background: #f7f7f8;
+  border: 1px solid #e4e4e7;
+  border-radius: 5px;
+
+  color: #62656e;
+  font-size: 11px;
+}
+
+.db-placeholder {
+  color: #999ba2;
+}
+
+/* Feedback */
+
+.feedback-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+
+  color: #5b2a86;
+  font-size: 11px;
+  font-weight: 650;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.feedback-link:hover {
+  text-decoration: underline;
+}
+
+.feedback-placeholder {
+  color: #999ba2;
+  font-size: 10px;
+}
+
+/* Actions */
+
+.table-actions-header {
+  width: 105px;
+  text-align: center !important;
+}
+
+.table-actions {
+  width: 105px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.row-action {
+  width: 27px;
+  height: 27px;
+
+  margin: 0 2px;
+
+  border: 0;
+  border-radius: 5px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  cursor: pointer;
+}
+
+.row-action.add {
+  color: #5b2a86;
+}
+
+.row-action.add:hover {
+  background: #f3ebf8;
+}
+
+.row-action.delete {
+  color: #b54848;
+}
+
+.row-action.delete:hover {
+  background: #fff0f0;
+}
