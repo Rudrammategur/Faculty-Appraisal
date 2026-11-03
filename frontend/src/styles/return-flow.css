@@ -1,0 +1,10 @@
+.return-decision-toggle{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.return-decision-toggle button{padding:10px 16px;background:white;color:#667085;border:1px solid #ddd8e6;border-radius:8px;font:inherit;cursor:pointer}
+.return-decision-toggle button[aria-pressed=true]{color:#672f8b;background:#f3ebf9;border-color:#b99bd0;font-weight:600}
+.return-fields select{width:100%;max-width:420px;padding:12px;border:1px solid #ccd2df;border-radius:8px;font:inherit;background:white;margin-bottom:20px}
+.return-fields{margin-bottom:24px}
+.review-return-note{font-size:13px;color:#7a6241;line-height:1.6}
+.return-instruction-card{padding:18px 20px;background:#fffbef;color:#775522;border:1px solid #f1dfa7;border-radius:9px;margin:16px 0}
+.return-instruction-card strong{display:block;font-size:15px}
+.return-instruction-card p{white-space:pre-wrap;overflow-wrap:anywhere;margin:8px 0;line-height:1.75}
+.return-instruction-card small{font-size:12px}

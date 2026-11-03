@@ -1,15 +1,85 @@
+import MappedDocumentUpload from '../components/common/MappedDocuments'
+
 import { ClipboardCheck } from 'lucide-react'
 import PageHeader from '../components/common/PageHeader'
 import SectionCard from '../components/common/SectionCard'
-import { TextArea } from '../components/common/Fields'
+import { useState } from 'react'
+
+// Count words
+const countWords = (text = '') => {
+  const trimmed = text.trim()
+  return trimmed ? trimmed.split(/\s+/).length : 0
+}
 
 export default function SelfAppraisal({ form, update }) {
-  return <>
-    <PageHeader eyebrow="Step 6 · Miscellaneous & self appraisal" title="Your reflection" description="Explain meaningful work, constraints, achievements and the support you need for professional growth." icon={ClipboardCheck} />
-    <SectionCard title="Other work" description="Include work not already captured in the sections above."><TextArea label="Other work" value={form.otherWork} onChange={v=>update('otherWork',v)} max={1000}/></SectionCard>
-    <SectionCard title="Self appraisal" description="Comment on your work, including circumstances that prevented you from undertaking activities in some elements."><TextArea label="Self appraisal" value={form.selfAppraisal} onChange={v=>update('selfAppraisal',v)} max={1000}/></SectionCard>
-    <SectionCard title="Comments / suggestions for future work" description="Mention difficulties faced, improvement suggestions, training, infrastructure and other support needed for professional growth."><TextArea label="Future work & suggestions" value={form.futureWork} onChange={v=>update('futureWork',v)} max={1000}/></SectionCard>
-    <SectionCard title="Research done specifically at IIT Dharwad"><TextArea label="Research statement" value={form.researchAtIIT} onChange={v=>update('researchAtIIT',v)} max={1000}/></SectionCard>
-    <SectionCard title="Associate faculty — other department / centre" description="Complete this only if applicable."><TextArea label="Separate summary of work" value={form.associateSummary} onChange={v=>update('associateSummary',v)} max={1000}/></SectionCard>
-  </>
+  const [wordCount, setWordCount] = useState(
+    countWords(form.otherWork || '')
+  )
+
+  const handleOtherWorkChange = (e) => {
+    const value = e.target.value
+    const words = countWords(value)
+
+    if (words <= 1000) {
+      update('otherWork', value)
+      setWordCount(words)
+    }
+  }
+
+  return (
+    <>
+      <PageHeader
+        title="V. MISCELLANEOUS INCLUDING SELF APPRAISAL"
+        icon={ClipboardCheck}
+      />
+
+      {/* a) Other Work */}
+
+      <SectionCard title="a) Other Work (Not Included in the Form Above)">
+        <div className="instructional-textarea">
+          <textarea
+            rows={6}
+            maxLength={1000}
+            value={form.otherWork ?? ''}
+            onChange={(e) => update('otherWork', e.target.value)}
+            placeholder="Enter details of other work not included in the previous sections..."
+            aria-label="Other work"
+          />
+
+          <div className="textarea-meta">
+            <span>Maximum 1000 characters</span>
+            <span>{(form.otherWork ?? '').length}/1000</span>
+          </div>
+        </div>
+        <MappedDocumentUpload target="otherWork"/>
+      </SectionCard>
+
+      {/* b) Self Appraisal */}
+
+      <SectionCard title="b) Self Appraisal">
+        <p className="self-appraisal-description">
+          Comments on the work including particulars of
+          circumstances for not being able to undertake
+          activities in some elements.
+        </p>
+
+        <div className="instructional-textarea">
+          <textarea
+            rows={6}
+            maxLength={1000}
+            value={form.selfAppraisal ?? ''}
+            onChange={(e) => update('selfAppraisal', e.target.value)}
+            placeholder="Enter your self appraisal..."
+            aria-label="Self appraisal"
+          />
+
+          <div className="textarea-meta">
+            <span>Maximum 1000 characters</span>
+            <span>{(form.selfAppraisal ?? '').length}/1000</span>
+          </div>
+        </div>
+        <MappedDocumentUpload target="selfAppraisal"/>
+      </SectionCard>
+    </>
+  )
 }

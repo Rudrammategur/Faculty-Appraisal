@@ -1,0 +1,154 @@
+.applicant-dashboard {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  padding: 28px;
+  background: #f7f8fb;
+}
+
+.dashboard-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.dashboard-heading h1 {
+  margin: 0 0 6px;
+  color: #263247;
+  font-size: 24px;
+}
+
+.dashboard-heading p {
+  margin: 0;
+  color: #68758a;
+  font-size: 14px;
+}
+
+.dashboard-card {
+  background: #fff;
+  border: 1px solid #e2e5ed;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dashboard-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 16px 20px;
+  border-bottom: 1px solid #eceef3;
+}
+
+.dashboard-card-heading h2 {
+  margin: 0;
+  font-size: 16px;
+  color: #512778;
+}
+
+.dashboard-card-heading span {
+  color: #68758a;
+  font-size: 13px;
+}
+
+.dashboard-table-scroll {
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  min-width: 650px;
+  border-collapse: collapse;
+}
+
+.dashboard-table th,
+.dashboard-table td {
+  padding: 15px 20px;
+  text-align: left;
+  font-size: 14px;
+  border-bottom: 1px solid #eceef3;
+}
+
+.dashboard-table th {
+  background: #faf8fc;
+  color: #655b71;
+  font-weight: 600;
+}
+
+.dashboard-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.dashboard-status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  background: #fff3d6;
+  color: #805b0b;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.dashboard-empty {
+  padding: 42px 20px;
+  text-align: center;
+}
+
+.dashboard-empty p {
+  margin: 0 0 8px;
+  color: #354157;
+  font-size: 15px;
+}
+
+.dashboard-empty span,
+.dashboard-session-note {
+  color: #748094;
+  font-size: 13px;
+}
+
+.dashboard-session-note {
+  margin: 12px 0 0;
+}
+
+.back-to-dashboard {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-bottom: 18px;
+  padding: 0;
+  border: none;
+  background: transparent;
+  color: #612e87;
+  font: inherit;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .applicant-dashboard {
+    padding: 18px 14px;
+  }
+
+  .dashboard-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+.applicant-dashboard .outline-btn {
+  background: #612e87;
+  border: 1px solid #612e87;
+  color: #fff;
+  padding: 9px 16px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.applicant-dashboard .outline-btn:hover {
+  background: #512572;
+  border-color: #512572;
+}

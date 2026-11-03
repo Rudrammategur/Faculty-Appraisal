@@ -1,0 +1,6 @@
+.av-submit-panel{margin-top:24px;padding:18px;border:1px solid #e5dced;border-radius:8px;background:#faf8fc}
+.av-confirm{display:flex;align-items:flex-start;gap:10px;line-height:1.5}.av-confirm input{flex-shrink:0;margin-top:4px}
+.av-submit-actions{display:flex;justify-content:flex-end;gap:10px;margin-top:16px;flex-wrap:wrap}
+.av-submit-button{border:0;border-radius:6px;padding:10px 16px;background:#612e87;color:white;font:inherit;cursor:pointer}
+.av-submit-button:disabled{opacity:.5;cursor:not-allowed}.av-submit-error{color:#b42318}.av-submit-note{color:#697386;font-size:13px}
+@media print{.av-submit-panel,.av-tabs{display:none!important}.av-application-panel[hidden]{display:block!important}.av-history-panel{display:none!important}}

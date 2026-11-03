@@ -1,0 +1,8 @@
+.review-workspace .review-pagination{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 22px;background:#fff;border-top:1px solid #e8e2ee;color:#697386;font-size:13px}
+.review-pagination>div{display:flex;align-items:center;gap:12px}
+.review-pagination .outline-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:7px 13px;font-size:13px;border:1px solid #e2d9ec;border-radius:8px;background:#fff;color:#633084;cursor:pointer}
+.review-pagination button:hover:not(:disabled){background:#f6f0fa}
+.review-pagination button:disabled{opacity:.45;cursor:default}
+.review-pagination button:focus-visible{outline:3px solid #bca0d2;outline-offset:3px}
+@media(max-width:600px){.review-workspace .review-pagination{align-items:flex-start;flex-direction:column;padding:14px}.review-pagination>div{width:100%;justify-content:space-between;gap:8px}}
+@media print{.review-pagination{display:none!important}}

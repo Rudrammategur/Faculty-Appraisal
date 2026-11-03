@@ -1,0 +1,33 @@
+:root {
+  --font-family: Arial, Helvetica, sans-serif;
+
+  --font-small: 12px;
+  --font-body: 14px;
+  --font-section: 17px;
+  --font-title: 20px;
+
+  --color-primary: #612e87;
+  --color-primary-dark: #512778;
+  --color-primary-soft: #f8f5fb;
+
+  --color-text: #263247;
+  --color-muted: #697386;
+  --color-background: #f7f8fb;
+  --color-surface: #ffffff;
+  --color-border: #e2dcea;
+  --color-warning: #805b0b;
+
+  --radius-card: 10px;
+}
+
+body {
+  font-family: var(--font-family);
+  color: var(--color-text);
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}

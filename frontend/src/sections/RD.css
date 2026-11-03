@@ -1,0 +1,11 @@
+.rd-project-scroll{width:100%;max-width:100%;overflow-x:auto;border:1px solid #e1e4eb;border-radius:8px;background:#fff;box-sizing:border-box}
+.rd-project-scroll .rd-project-table{width:100%;min-width:900px;table-layout:fixed;border-collapse:collapse;font-size:13px;line-height:1.5}
+.rd-project-scroll .rd-project-table th,.rd-project-scroll .rd-project-table td{box-sizing:border-box;padding:12px;border-right:1px solid #e5e7ed;border-bottom:1px solid #e5e7ed;vertical-align:top;white-space:normal;overflow-wrap:anywhere;word-break:normal;text-align:left}
+.rd-project-scroll .rd-project-table th{background:#f6f7fa;color:#475467;font-size:12px;font-weight:650;vertical-align:middle}
+.rd-project-scroll .rd-project-table th:last-child,.rd-project-scroll .rd-project-table td:last-child{border-right:0}
+.rd-project-scroll .rd-project-table tr:last-child td{border-bottom:0}
+.rd-project-scroll .rd-project-table th:first-child,.rd-project-scroll .rd-project-number{text-align:center;padding-left:6px;padding-right:6px}
+.rd-project-code{display:block;color:#344054;margin-bottom:4px;font-size:12px}
+.rd-project-status{display:inline-block;box-sizing:border-box;max-width:100%;padding:5px 8px;border:1px solid #e3d9ed;border-radius:6px;background:#f7f3fb;color:#5b3976;font-size:12px;font-weight:500;line-height:1.5;white-space:normal;overflow-wrap:anywhere;word-break:normal}
+.rd-visually-hidden{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+@media print{.rd-project-scroll{overflow:visible;border-radius:0}.rd-project-scroll .rd-project-table{min-width:0;font-size:9pt}.rd-project-scroll .rd-project-table th,.rd-project-scroll .rd-project-table td{padding:5px}.rd-project-status{background:transparent;color:inherit;border-color:#ddd;font-size:8pt}.rd-project-table thead{display:table-header-group}.rd-project-table tr{break-inside:avoid}}

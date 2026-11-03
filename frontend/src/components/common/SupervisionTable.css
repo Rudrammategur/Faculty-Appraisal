@@ -1,0 +1,193 @@
+.supervision-table {
+  width: 100%;
+  min-width: 0;
+}
+
+.supervision-table .dynamic-table-scroll {
+  overflow-x: auto;
+}
+
+.supervision-table .dynamic-table-grid {
+  width: 100%;
+  min-width: 1000px;
+  table-layout: fixed;
+  border-collapse: collapse;
+}
+
+/* Override generic column sizing only within supervision tables. */
+.supervision-table .dynamic-table-grid tr > th,
+.supervision-table .dynamic-table-grid tr > td {
+  min-width: 0;
+  max-width: none;
+  box-sizing: border-box;
+}
+
+.supervision-table .dynamic-table-grid thead th {
+  padding: 10px 8px;
+  background: #f8f5fb;
+  color: #512778;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  white-space: normal;
+  overflow-wrap: break-word;
+}
+
+.supervision-table .dynamic-table-grid tbody td {
+  padding: 10px 8px;
+  vertical-align: top;
+  color: #344054;
+  font-size: 13px;
+  line-height: 1.45;
+}
+
+/* Ph.D.: serial, student, registration, title, status, co-guide, remarks. */
+.supervision-phd .dynamic-table-grid tr > :nth-child(1) {
+  width: 5%;
+}
+
+.supervision-phd .dynamic-table-grid tr > :nth-child(2) {
+  width: 19%;
+}
+
+.supervision-phd .dynamic-table-grid tr > :nth-child(3) {
+  width: 12%;
+}
+
+.supervision-phd .dynamic-table-grid tr > :nth-child(4) {
+  width: 24%;
+}
+
+/* Projects: level, title, student, registration, status, co-guide, remarks. */
+.supervision-projects .dynamic-table-grid tr > :nth-child(1) {
+  width: 8%;
+}
+
+.supervision-projects .dynamic-table-grid tr > :nth-child(2) {
+  width: 24%;
+}
+
+.supervision-projects .dynamic-table-grid tr > :nth-child(3) {
+  width: 18%;
+}
+
+.supervision-projects .dynamic-table-grid tr > :nth-child(4) {
+  width: 10%;
+}
+
+/* Shared final columns. */
+.supervision-table .dynamic-table-grid tr > :nth-child(5) {
+  width: 12%;
+}
+
+.supervision-table .dynamic-table-grid tr > :nth-child(6) {
+  width: 13%;
+}
+
+.supervision-table .dynamic-table-grid tr > :nth-child(7) {
+  width: 15%;
+}
+
+.supervision-table .dynamic-table-grid input,
+.supervision-table .dynamic-table-grid select,
+.supervision-table .dynamic-table-grid textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 8px;
+  box-sizing: border-box;
+  border: 1px solid #dfe1e5;
+  border-radius: 6px;
+  background: #fff;
+  color: #344054;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+}
+
+.supervision-table .dynamic-table-grid input,
+.supervision-table .dynamic-table-grid select {
+  height: 38px;
+  min-height: 38px;
+}
+
+.supervision-table .dynamic-table-grid textarea {
+  height: 64px;
+  min-height: 64px;
+  resize: vertical;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.supervision-table .dynamic-table-grid input:focus,
+.supervision-table .dynamic-table-grid select:focus,
+.supervision-table .dynamic-table-grid textarea:focus {
+  outline: none;
+  border-color: #8c5aaa;
+  box-shadow: 0 0 0 2px rgba(97, 46, 135, 0.08);
+}
+
+.supervision-table .dynamic-table-grid .db-value-cell {
+  display: block;
+  min-height: 38px;
+  height: auto;
+  padding: 8px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #344054;
+  font-size: 13px;
+  line-height: 1.45;
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+.supervision-table .dynamic-table-grid td > small {
+  display: block;
+  margin-top: 4px;
+  color: #7b8190;
+  font-size: 11px;
+  line-height: 1.2;
+  text-align: right;
+}
+/* Ph.D. column widths: total 100%. */
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(1) {
+  width: 5%;
+}
+
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(2) {
+  width: 19%;
+}
+
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(3) {
+  width: 12%;
+}
+
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(4) {
+  width: 22%;
+}
+
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(5) {
+  width: 11%;
+}
+
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(6) {
+  width: 13%;
+}
+
+.supervision-table.supervision-phd .dynamic-table-grid tr > :nth-child(7) {
+  width: 18%;
+}
+.supervision-mode-note {
+  display: block;
+  color: #7b8190;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.4;
+  letter-spacing: normal;
+}

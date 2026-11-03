@@ -1,0 +1,475 @@
+/* .application-view{height:100vh;overflow-y:auto;background:#f7f8fb;padding:24px;box-sizing:border-box;color:#263247;font:14px/1.5 Arial,sans-serif}
+.application-view .av-actions{display:flex;gap:12px;flex-wrap:wrap;max-width:1400px;margin:0 auto 18px}
+.application-view .av-actions button:last-child{margin-left:auto;color:#fff;background:#612e87}
+.application-view .av-paper{max-width:1400px;margin:auto;padding:28px;background:white;border:1px solid #e2dcea;border-radius:12px}
+.application-view .av-heading{display:flex;align-items:center;gap:32px;border-bottom:2px solid #612e87;padding-bottom:20px;margin-bottom:20px}
+.application-view .av-heading img{width:240px;max-width:35%;height:auto;object-fit:contain}
+.application-view .av-heading>div{flex:1;text-align:center}
+.application-view h1{font-size:23px;margin:6px 0;color:#512778}
+.application-view .av-heading p{margin:4px 0}
+.application-view .av-heading strong{color:#805b0b}
+.application-view .av-section{margin-top:24px}
+.application-view h2{font-size:17px;color:#512778;background:#f8f5fb;padding:10px 12px;margin:0 0 14px;border-left:3px solid #612e87}
+.application-view h3{font-size:14px;margin:0 0 9px}
+.application-view .av-group{margin:18px 0}
+.application-view .av-profile{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin:14px 0}
+.application-view .av-profile>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px}
+.application-view dt,.application-view .av-muted{color:#697386}
+.application-view dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.application-view .av-response{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.application-view .av-table-scroll{overflow-x:auto}
+.application-view table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:13px}
+.application-view th,.application-view td{border:1px solid #dce2ea;padding:9px;vertical-align:top;text-align:left;overflow-wrap:anywhere;white-space:pre-wrap}
+.application-view th{background:#f7f8fa;font-weight:600}
+.application-view table th:first-child{width:45px}
+.application-view a{color:#612e87;text-decoration:underline;overflow-wrap:anywhere}
+@media(max-width:700px){.application-view{padding:12px}.application-view .av-paper{padding:14px}.application-view .av-heading{flex-direction:column;gap:12px}.application-view .av-heading img{max-width:100%;width:220px}.application-view .av-profile{grid-template-columns:1fr}.application-view table{min-width:800px}.application-view .av-actions button:last-child{margin-left:0}}
+@page{size:A4 landscape;margin:12mm}
+@media print{
+ html,body,#root{height:auto!important;overflow:visible!important;background:white!important}
+ .application-view{height:auto!important;overflow:visible!important;padding:0;background:white;font-size:10pt}
+ .application-view .av-actions{display:none!important}
+ .application-view .av-paper{max-width:none;padding:0;border:0;border-radius:0}
+ .application-view .av-heading{flex-direction:row;gap:20px}
+ .application-view .av-heading img{width:200px;max-width:30%}
+ .application-view h1{font-size:16pt}
+ .application-view h2{font-size:12pt;break-after:avoid}
+ .application-view h3{font-size:10pt;break-after:avoid}
+ .application-view .av-profile{grid-template-columns:1fr 1fr}
+ .application-view .av-table-scroll{overflow:visible}
+ .application-view table{min-width:0;width:100%;font-size:9pt}
+ .application-view th,.application-view td{padding:5px}
+ .application-view thead{display:table-header-group}
+ .application-view tr{break-inside:avoid}
+ .application-view a{color:inherit}
+ .application-view a::after{content:none!important}
+ .application-view .av-section,.application-view .av-group{break-inside:auto}
+} */
+
+
+.application-view {
+  height: 100vh;
+  overflow-y: auto;
+  background: var(--color-background);
+  padding: 20px;
+  box-sizing: border-box;
+  color: var(--color-text);
+  font: var(--font-body)/1.5 var(--font-family);
+}
+.application-view .av-actions{display:flex;gap:12px;flex-wrap:wrap;max-width:1400px;margin:0 auto 18px}
+.application-view .av-actions button:last-child{margin-left:auto;color:#fff;background:#612e87}
+.application-view .av-paper {
+  max-width: 1400px;
+  margin: auto;
+  padding: 20px 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+}
+.application-view .av-heading {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 0 12px;
+  margin: 0 0 12px;
+  border-bottom: 2px solid var(--color-primary);
+}
+.application-view .av-heading img {
+  width: 210px;
+  max-width: 28%;
+  height: auto;
+  max-height: 66px;
+  object-fit: contain;
+}
+
+.application-view .av-heading > div {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+}
+.application-view h1 {
+  margin: 4px 0;
+  color: var(--color-primary-dark);
+  font-size: var(--font-title);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.application-view .av-heading p {
+  margin: 3px 0;
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+.application-view .av-heading strong {
+  display: block;
+  margin-top: 4px;
+  color: var(--color-warning);
+  font-size: var(--font-small);
+  line-height: 1.35;
+}
+.application-view .av-section{margin-top:24px}
+.application-view h2 {
+  margin: 0 0 12px;
+  padding: 8px 12px;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-soft);
+  border-left: 3px solid var(--color-primary);
+  font-size: var(--font-section);
+}
+.application-view h3{font-size:14px;margin:0 0 9px}
+.application-view .av-group{margin:18px 0}
+.application-view .av-profile{display:grid;grid-template-columns:1fr 1fr;gap:12px 28px;margin:14px 0}
+.application-view .av-profile>div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:10px}
+.application-view dt,
+.application-view .av-muted {
+  color: var(--color-muted);
+}
+.application-view dd{margin:0;font-weight:600;overflow-wrap:anywhere}
+.application-view .av-response{white-space:pre-wrap;overflow-wrap:anywhere;margin:0}
+.application-view .av-table-scroll{overflow-x:auto}
+.application-view table{border-collapse:collapse;width:100%;table-layout:fixed;font-size:13px}
+.application-view th,.application-view td{border:1px solid #dce2ea;padding:9px;vertical-align:top;text-align:left;overflow-wrap:anywhere;white-space:pre-wrap}
+.application-view th{background:#f7f8fa;font-weight:600}
+.application-view .av-table-scroll > table th:first-child {
+  width: 45px;
+}
+.application-view a{color:#612e87;text-decoration:underline;overflow-wrap:anywhere}
+@media(max-width:700px){.application-view{padding:12px}.application-view .av-paper{padding:14px}
+.application-view .av-heading {
+  flex-direction: column;
+  gap: 8px;
+}
+
+.application-view .av-heading img {
+  width: 180px;
+  max-width: 100%;
+  max-height: 56px;
+}.application-view .av-profile{grid-template-columns:1fr}.application-view table{min-width:800px}.application-view .av-actions button:last-child{margin-left:0}}
+@page{size:A4 landscape;margin:12mm}
+@media print{
+ html,body,#root{height:auto!important;overflow:visible!important;background:white!important}
+ .application-view{height:auto!important;overflow:visible!important;padding:0;background:white;font-size:10pt}
+ .application-view .av-actions{display:none!important}
+ .application-view .av-paper{max-width:none;padding:0;border:0;border-radius:0}
+ .application-view .av-heading {
+  flex-direction: row;
+  gap: 16px;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.application-view .av-heading img {
+  width: 170px;
+  max-height: 52px;
+  max-width: 28%;
+}
+
+.application-view h1 {
+  font-size: 14pt;
+}
+.application-view .av-heading p,
+.application-view .av-heading strong {
+  font-size: 9pt;
+}
+ .application-view h2{font-size:12pt;break-after:avoid}
+ .application-view h3{font-size:10pt;break-after:avoid}
+ .application-view .av-profile{grid-template-columns:1fr 1fr}
+ .application-view .av-table-scroll{overflow:visible}
+ .application-view table{min-width:0;width:100%;font-size:9pt}
+ .application-view th,.application-view td{padding:5px}
+ .application-view thead{display:table-header-group}
+ .application-view tr{break-inside:avoid}
+ .application-view a{color:inherit}
+ .application-view a::after{content:none!important}
+ .application-view .av-section,.application-view .av-group{break-inside:auto}
+}
+.application-view .av-tabs {
+  display: flex;
+  gap: 0;
+  margin: 12px 0 0;
+  border-bottom: 1px solid #e2dcea;
+}
+
+.application-view .av-tabs button {
+  position: relative;
+  padding: 11px 18px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: #697386;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.application-view .av-tabs button + button {
+  border-left: 1px solid #e2dcea;
+}
+
+.application-view .av-tabs button[aria-selected="true"] {
+  color: var(--color-primary, #612e87);
+}
+
+.application-view .av-tabs button[aria-selected="true"]::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  background: var(--color-primary, #612e87);
+}
+
+.application-view .av-history-panel {
+  padding-top: 16px;
+}
+
+.application-view .av-submit-panel {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #e2dcea;
+}
+
+.application-view .av-confirm {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #263247;
+  font-size: 14px;
+  line-height: 1.5;
+  cursor: pointer;
+}
+
+.application-view .av-confirm input {
+  flex: 0 0 auto;
+  width: 17px;
+  height: 17px;
+  margin: 2px 0 0;
+  accent-color: #612e87;
+}
+
+.application-view .av-submit-actions {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.application-view .av-submit-button {
+  padding: 10px 18px;
+  border: 1px solid #612e87;
+  border-radius: 6px;
+  background: #612e87;
+  color: white;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.application-view button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+.application-view .av-submit-note {
+  margin: 10px 0 0;
+  color: #697386;
+  font-size: 12px;
+}
+
+.application-view .av-submit-error {
+  margin: 10px 0 0;
+  color: #b42318;
+  font-size: 13px;
+}
+
+@media print {
+  .application-view .av-tabs,
+  .application-view .av-history-panel,
+  .application-view .av-submit-panel {
+    display: none !important;
+  }
+
+  /* Print the application even when Workflow History is selected. */
+  .application-view .av-application-panel[hidden] {
+    display: block !important;
+  }
+}
+@media screen {
+  .application-view header.av-heading {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 20px 26px;
+    margin-bottom: 22px;
+    background: #f7f3fb;
+    border: 1px solid #e6dbee;
+    border-radius: 14px;
+  }
+
+  .application-view header.av-heading > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 5px 24px;
+    flex: 1;
+    min-width: 0;
+    text-align: left;
+  }
+
+  .application-view header.av-heading h1 {
+    grid-column: 1;
+    margin: 0;
+    color: #633084;
+    font-size: 21px;
+    font-weight: 650;
+    line-height: 1.4;
+  }
+
+  .application-view header.av-heading p {
+    grid-column: 1;
+    margin: 0;
+    color: #697386;
+    font-size: 13px;
+    line-height: 1.5;
+  }
+
+  .application-view header.av-heading strong {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: end;
+    align-self: center;
+    width: auto;
+    margin: 0;
+    padding: 8px 16px;
+    background: #fff;
+    border: 1px solid #e2d4ed;
+    border-radius: 20px;
+    color: #633084;
+    font-size: 12px;
+    font-weight: 650;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .application-view header.av-heading {
+    flex-wrap: wrap;
+    gap: 14px;
+    padding: 16px;
+  }
+
+  .application-view header.av-heading > div {
+    flex-basis: 100%;
+    grid-template-columns: 1fr;
+  }
+
+  .application-view header.av-heading h1 {
+    font-size: 18px;
+  }
+
+  .application-view header.av-heading strong {
+    grid-column: 1;
+    grid-row: auto;
+    justify-self: start;
+    margin-top: 6px;
+  }
+}
+@media screen {
+  .application-view header.av-heading > img {
+    width: 280px !important;
+    min-width: 280px !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    flex: 0 0 280px !important;
+    box-sizing: border-box;
+    padding: 10px 14px !important;
+    margin: 10px 20px 10px 10px !important;
+    background: #fff;
+    border-radius: 10px;
+    object-fit: contain;
+  }
+}
+
+@media screen and (max-width: 680px) {
+  .application-view header.av-heading > img {
+    width: 240px !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    flex: 0 1 auto !important;
+    margin: 4px 0 !important;
+  }
+}
+@media print {
+  .application-view header.av-heading {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 6mm !important;
+    padding: 5mm !important;
+    margin: 0 0 6mm !important;
+    background: #f7f3fb !important;
+    border: 1px solid #e6dbee !important;
+    border-radius: 12px !important;
+    break-inside: avoid;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .application-view header.av-heading > img {
+    width: 70mm !important;
+    min-width: 70mm !important;
+    max-width: none !important;
+    height: auto !important;
+    max-height: none !important;
+    flex: 0 0 70mm !important;
+    box-sizing: border-box;
+    padding: 3mm !important;
+    margin: 0 !important;
+    background: #fff !important;
+    border-radius: 8px;
+    object-fit: contain;
+  }
+
+  .application-view header.av-heading > div {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) auto !important;
+    align-items: center;
+    gap: 2mm 5mm;
+    flex: 1;
+    min-width: 0;
+    text-align: left !important;
+  }
+
+  .application-view header.av-heading h1 {
+    grid-column: 1;
+    margin: 0 !important;
+    color: #633084 !important;
+    font-size: 15pt !important;
+    line-height: 1.3;
+  }
+
+  .application-view header.av-heading p {
+    grid-column: 1;
+    margin: 0 !important;
+    color: #697386 !important;
+    font-size: 9pt !important;
+  }
+
+  .application-view header.av-heading strong {
+    grid-column: 2;
+    grid-row: 1 / 4;
+    justify-self: end;
+    width: auto !important;
+    margin: 0 !important;
+    padding: 2mm 4mm !important;
+    background: #fff !important;
+    border: 1px solid #e2d4ed;
+    border-radius: 20px;
+    color: #633084 !important;
+    font-size: 9pt !important;
+  }
+}

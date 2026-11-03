@@ -1,0 +1,15 @@
+const express=require('express');
+const {requireAuthenticated}=require('../middleware/auth');
+const controller=require('../controllers/workflowController');
+const router=express.Router();
+router.use(requireAuthenticated);
+router.get('/mine',controller.mine);
+router.get('/pending',controller.pending);
+router.get('/reviewed',require('../controllers/reviewTrackingController').reviewed);
+router.get('/:id/history',controller.history);
+router.get('/:id/details',controller.details);
+router.get('/:id/source/:kind',controller.source);
+router.get('/:id/documents/:docId',controller.document);
+router.post('/:id/action',express.json({limit:'4mb'}),controller.takeAction);
+router.post('/:id/start-review',controller.startReview);
+module.exports=router;

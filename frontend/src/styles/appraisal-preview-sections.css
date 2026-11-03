@@ -1,0 +1,18 @@
+.application-view .av-section-controls{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin:16px 0;color:#697386;font-size:12px}
+.application-view .av-section-controls span{flex:1;min-width:180px}
+.application-view .av-section-controls button{border:1px solid #ded7e7;background:white;color:#612e87;border-radius:5px;padding:6px 10px;font:inherit;cursor:pointer}
+.application-view .av-fold-section{margin-top:12px;border:1px solid #e4dfeb;border-radius:7px;overflow:hidden}
+.application-view .av-fold-section>h2{margin:0;padding:0;border-left:3px solid #612e87;background:#f8f5fb}
+.application-view .av-section-toggle{display:flex;align-items:center;justify-content:space-between;gap:16px;width:100%;padding:12px 14px;background:none;border:0;color:inherit;font:inherit;text-align:left;cursor:pointer}
+.application-view .av-section-chevron{font-size:21px;line-height:1;flex-shrink:0;font-weight:400}
+.application-view .av-fold-section>.av-section-body{padding:0 14px 14px}
+.application-view .av-section-toggle:focus-visible,.application-view .av-section-controls button:focus-visible{outline:2px solid #612e87;outline-offset:-3px}
+.application-view .av-section-body[hidden]{display:none}
+@media(max-width:700px){.application-view .av-section-toggle{padding:11px 10px;font-size:14px}.application-view .av-fold-section>.av-section-body{padding:0 10px 10px}}
+@media print{
+ .application-view .av-section-controls,.application-view .av-section-chevron{display:none!important}
+ .application-view .av-section-body[hidden]{display:block!important}
+ .application-view .av-fold-section{border:0;border-radius:0;overflow:visible;margin-top:18px;break-inside:auto}
+ .application-view .av-fold-section>.av-section-body{padding:0}
+ .application-view .av-section-toggle{padding:8px 10px;cursor:default}
+}

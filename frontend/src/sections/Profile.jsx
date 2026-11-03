@@ -1,8 +1,8 @@
-import { UserRound, Info, Upload } from 'lucide-react'
+import { UserRound } from 'lucide-react'
 import PageHeader from '../components/common/PageHeader'
-import { AutoField, TextField } from '../components/common/Fields'
+import { AutoField } from '../components/common/Fields'
 
-function Profile({ form, update }) {
+export default function Profile({ form }) {
   return (
     <>
       <PageHeader
@@ -10,60 +10,27 @@ function Profile({ form, update }) {
         icon={UserRound}
       />
 
-        <div className="form-grid two">
+      <div className="form-grid two faculty-profile">
+        <AutoField
+          label="Name of the Faculty"
+          value={form.name}
+        />
 
-          {/* From ERP */}
-          <AutoField
-            label="Name of faculty"
-            value={form.name}
-          />
+        <AutoField
+          label="Employee ID"
+          value={form.employeeId}
+        />
 
-          <AutoField
-            label="Employee ID"
-            value={form.employeeId}
-          />
+        <AutoField
+          label="Designation"
+          value={form.designation}
+        />
 
-          <AutoField
-            label="Designation"
-            value={form.designation}
-          />
-
-          <AutoField
-            label="Pay level"
-            value={form.payLevel}
-          />
-
-          {/* Faculty input */}
-          <TextField
-            label="Basic Pay"
-            value={form.basicPay}
-            onChange={(value) => update('basicPay', value)}
-            type="number"
-            placeholder="Enter basic pay"
-          />
-
-          <TextField
-            label="Date of Ph.D. defence"
-            value={form.phdDefence}
-            onChange={(value) => update('phdDefence', value)}
-            type="date"
-          />
-
-          {/* From ERP */}
-          <AutoField
-            label="Date of joining to Institute"
-            value={form.joiningDate || 'Will be loaded from ERP'}
-          />
-
-          <AutoField
-            label="Department / Centre / Programme / School"
-            value={form.department}
-          />
-
-        </div>
-      
+        <AutoField
+          label="Department / Centre / Programme / School"
+          value={form.department}
+        />
+      </div>
     </>
   )
 }
-
-export default Profile

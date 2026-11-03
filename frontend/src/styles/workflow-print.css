@@ -1,0 +1,31 @@
+/* The approval flow table is for PDF/print only, not an on-screen progress card. */
+.application-view .workflow-print-only{display:none}
+@media print{
+ .application-view .av-application-panel[hidden],
+ .application-view .av-history-panel,
+ .application-view .av-history-panel[hidden]{display:block!important}
+ .application-view .workflow-print-only{display:block!important;margin-top:22px;break-inside:avoid}
+ .application-view .workflow-print-only>h2{break-after:avoid}
+ .application-view .workflow-print-only p{font-size:9pt;color:#333}
+ .application-view .workflow-print-only table{table-layout:fixed;width:100%;min-width:0!important;font-size:9pt}
+ .application-view .workflow-print-only table th:first-child{width:18%}
+ .application-view .workflow-print-only table th:nth-child(2){width:32%}
+ .application-view .workflow-print-only table th:nth-child(3){width:20%}
+ .application-view .workflow-print-only table th:nth-child(4){width:30%}
+ .application-view .workflow-history{margin-top:20px}
+ .application-view .workflow-history>ol>li{break-inside:auto;padding-bottom:14px}
+ .application-view .workflow-history article{border:1px solid #ddd;padding:10px 12px;break-inside:auto}
+ .application-view .workflow-history article>header{break-inside:avoid;break-after:avoid}
+ .application-view .workflow-history article>header strong{font-size:10pt}
+ .application-view .workflow-history time,.application-view .workflow-actor{font-size:9pt;color:#333}
+ .application-view .workflow-comment{font-size:9pt;line-height:1.6;overflow:visible!important;max-height:none!important}
+ .application-view .workflow-comment>div,.application-view .workflow-comment-short{white-space:pre-wrap!important;overflow-wrap:anywhere}
+ .application-view details.workflow-comment>div{display:block!important}
+ .application-view details.workflow-comment::details-content{content-visibility:visible!important;display:block!important}
+ .application-view details.workflow-comment>summary{display:none!important}
+ .application-view .workflow-history-dot{display:none}
+ .application-view .workflow-history>ol>li:before{display:none}
+ .application-view .av-tabs,.application-view .av-actions,
+ .application-view .av-submit-panel,.application-view .review-action-bar,
+ .application-view .review-decision-panel{display:none!important}
+}

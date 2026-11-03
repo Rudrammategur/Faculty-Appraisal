@@ -1,0 +1,36 @@
+.rdoc{font-size:12px;min-width:0}
+.rdoc-saved{display:flex;align-items:flex-start;gap:6px;min-width:0}
+.rdoc-name{display:inline-flex;align-items:flex-start;gap:5px;flex:1;min-width:0;padding:3px 0;border:0;background:none;color:var(--color-primary,#612e87);font:inherit;text-align:left;cursor:pointer}
+.rdoc-name svg{flex-shrink:0;margin-top:2px}
+.rdoc-name span{overflow-wrap:anywhere;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+.rdoc-tools{display:flex;flex-shrink:0;gap:2px}
+.rdoc-icon{display:inline-flex;align-items:center;justify-content:center;width:26px;height:28px;padding:0;border:0;background:transparent;border-radius:4px;color:#697386;cursor:pointer}
+.rdoc-icon:hover{background:#f3edf8;color:#612e87}.rdoc-remove:hover{background:#fff0f0;color:#b42318}
+.rdoc-hint{display:block;margin-top:6px;font-size:11px;color:#697386;line-height:1.4}
+.rdoc-error{color:#b42318;margin-top:6px;font-size:12px}
+.rdoc button:disabled{opacity:.55;cursor:wait}
+.rdoc button:focus-visible,.rdoc-dialog a:focus-visible,.rdoc-dialog button:focus-visible{outline:2px solid #612e87;outline-offset:3px}
+.rdoc-dialog{width:min(1100px,94vw);height:88vh;max-width:94vw;max-height:92vh;padding:0;border:1px solid #dedfe3;border-radius:10px;background:#fff;color:#263247;box-shadow:0 18px 70px #0004;overflow:hidden}
+.rdoc-dialog::backdrop{background:rgba(24,28,39,.6)}
+.rdoc-viewer{height:100%;display:flex;flex-direction:column;font:14px/1.5 Arial,sans-serif}
+.rdoc-viewer-bar{display:flex;align-items:center;gap:14px;padding:12px 16px;border-bottom:1px solid #e4e7ec;background:white}
+.rdoc-viewer-name{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-weight:600}
+.rdoc-download{display:inline-flex;align-items:center;gap:6px;color:#612e87;text-decoration:none;white-space:nowrap;font-weight:600}
+.rdoc-close{display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;width:32px;height:32px;border:0;border-radius:5px;background:#f4f5f7;color:#344054;cursor:pointer}
+.rdoc-preview{flex:1;min-height:0;overflow:auto;background:#f2f4f7;display:flex;align-items:flex-start;justify-content:center}
+.rdoc-preview img{max-width:100%;height:auto;object-fit:contain;display:block;margin:auto}
+.rdoc-preview iframe{width:100%;height:100%;border:0;background:white}
+.rdoc-preview p{padding:24px}
+@media(max-width:600px){.rdoc-dialog{width:96vw;max-width:96vw;height:90vh}.rdoc-viewer-bar{gap:8px;padding:10px}.rdoc-viewer-name{font-size:12px}.rdoc-download{font-size:12px}}
+@media print{.rdoc-dialog{display:none!important}}
+
+/* Keep the native picker hidden even inside table input styling. */
+.rdoc input[type="file"]{display:none!important}
+
+@media print{
+    .rdoc .rdoc-tools,
+    .rdoc>input,
+    .rdoc .rdoc-hint,
+    .rdoc .rdoc-error{display:none!important}
+    .rdoc .rdoc-name{color:inherit!important}
+    .rdoc .rdoc-name span{text-decoration:none}}

@@ -1,15 +1,41 @@
-import { UserRound, GraduationCap, BookOpen, BriefcaseBusiness, Users, ClipboardCheck, Lightbulb, ShieldCheck } from 'lucide-react'
+import {
+  UserRound,
+  GraduationCap,
+  BookOpen,
+  BookOpenCheck,
+  BriefcaseBusiness,
+  Users,
+  ClipboardCheck,
+  MessageSquareText,
+  Lightbulb,
+  ShieldCheck,
+} from 'lucide-react'
+
 
 export const APPRAISAL_SECTIONS = [
-  { id: 'profile', label: 'Profile', short: 'Basic details', icon: UserRound },
+
   { id: 'instructional', label: 'Instructional', short: 'Teaching & projects', icon: GraduationCap },
+
   { id: 'research', label: 'Research & Publications', short: 'Research output', icon: BookOpen },
+
   { id: 'rd', label: 'R&D & Consultancy', short: 'Projects & outreach', icon: BriefcaseBusiness },
+
   { id: 'institutional', label: 'Institutional', short: 'Management & service', icon: Users },
+
   { id: 'self', label: 'Self Appraisal', short: 'Reflection & plans', icon: ClipboardCheck },
-  { id: 'innovations', label: 'Innovations', short: 'New teaching initiatives', icon: Lightbulb },
+
+  { id: 'futureWork', label: 'Future Work', short: 'Comments & suggestions', icon: MessageSquareText },
+
+  {
+  id: 'otherDepartmentWork',
+  label: 'Other Dept./Centre',
+  short: 'Separate summary of work',
+  icon: BriefcaseBusiness,
+},
+
   { id: 'review', label: 'Review & Submit', short: 'Preview everything', icon: ShieldCheck },
 ]
+
 
 export const INITIAL_ROWS = {
   teaching: [
@@ -26,6 +52,6 @@ export const INITIAL_FORM = {
   payLevel: 'Level 12', basicPay: '', phdDefence: '', joiningDate: '',
   department: 'Department / Centre / Programme / School',
   teachingInnovations: '', otherInstructional: '', otherWork: '', selfAppraisal: '',
-  futureWork: '', researchAtIIT: '', expectedResearch: '', expectedOutreach: '',
+  futureWork: '', expectedResearch: '', expectedOutreach: '', otherDepartmentWork: '',
   expectedProfessional: '', associateSummary: '', rows: INITIAL_ROWS,
 }

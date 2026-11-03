@@ -1,0 +1,12 @@
+.applicant-dashboard button.appraisal-refresh-icon,
+.review-workspace button.appraisal-refresh-icon {
+ display:inline-flex;align-items:center;justify-content:center;
+ width:40px;height:40px;min-width:40px;padding:0;border-radius:10px;
+ flex:0 0 auto;background:#fff;color:#66308b;border:1px solid #e1d9eb;
+}
+.appraisal-refresh-icon:hover:not(:disabled){background:#f5effa}
+.appraisal-refresh-icon:focus-visible{outline:3px solid #ad7cca;outline-offset:3px}
+.appraisal-refresh-icon:disabled{opacity:.55;cursor:wait}
+.appraisal-refresh-spinning{animation:appraisal-refresh-turn 1s linear infinite}
+@keyframes appraisal-refresh-turn{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.appraisal-refresh-spinning{animation:none}}

@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const { requireFaculty } = require('../middleware/auth');
+const controller = require('../controllers/appraisalExtraController');
+router.use(requireFaculty);
+router.get('/:appraisalId/others', controller.getOthers);
+router.put('/:appraisalId/others', controller.saveOthers);
+router.get('/:appraisalId/responsibilities', controller.getResponsibilities);
+router.put('/:appraisalId/responsibilities', controller.saveResponsibilities);
+module.exports = router;

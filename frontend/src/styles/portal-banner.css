@@ -1,0 +1,80 @@
+/* Shared masthead only. Form grids, workflow and print-paper styling stay separate. */
+header.portal-banner.portal-banner {
+ display:flex;align-items:center;justify-content:flex-start;gap:22px;
+ position:relative;top:auto;z-index:20;box-sizing:border-box;
+ height:auto;min-height:100px;flex:0 0 auto;
+ margin:12px 16px 16px;padding:16px 22px;
+ border:0;border-radius:18px;
+ background:linear-gradient(110deg,#62096c 0%,#85238f 52%,#a152bb 100%);
+ color:#fff;box-shadow:0 14px 30px rgba(76,25,95,.13);
+}
+header.portal-banner .brand {flex:0 0 auto;display:flex;margin:0;padding:0}
+header.portal-banner>img,header.portal-banner .topbar-logo {
+ width:210px;height:auto;max-width:210px;max-height:70px;
+ box-sizing:border-box;object-fit:contain;flex:0 0 auto;
+ background:transparent;border-radius:0;padding:0;margin:0;
+}
+header.portal-banner .topbar-heading,header.portal-banner>div:not(.brand):not(.top-actions) {
+ flex:1;min-width:0;text-align:left;grid-column:auto;grid-row:auto;
+}
+header.portal-banner .topbar-title,header.portal-banner h1,header.portal-banner strong {
+ display:block;margin:0;color:#fff;font-family:Georgia,'Times New Roman',serif;
+ font-size:clamp(20px,1.7vw,26px);font-weight:700;line-height:1.2;letter-spacing:0;
+}
+header.portal-banner .brand-subtitle,header.portal-banner p {
+ color:#f4e8f8;font-size:13px;font-weight:400;margin:0 0 6px;line-height:1.5;
+}
+header.portal-banner .topbar-title+.brand-subtitle {margin:7px 0 0}
+header.portal-banner .top-actions {
+ display:flex;align-items:center;justify-content:flex-end;gap:10px;flex-wrap:wrap;
+ flex:0 1 300px;max-width:300px;margin-left:auto;grid-column:auto;grid-row:auto;
+}
+header.portal-banner button.outline-btn,header.portal-banner .back-to-dashboard,header.portal-banner .portal-banner-back {
+ display:inline-flex;align-items:center;justify-content:center;gap:7px;
+ min-height:38px;box-sizing:border-box;padding:8px 14px;border:1px solid rgba(255,255,255,.85);
+ border-radius:10px;background:#fff;color:#861599;font-family:inherit;font-size:14px;font-weight:650;
+ white-space:nowrap;cursor:pointer;box-shadow:none;
+}
+header.portal-banner button:hover:not(:disabled) {background:#faf0ff;color:#650878}
+header.portal-banner button:focus-visible {outline:3px solid #f5c8ff;outline-offset:4px}
+header.portal-banner button:disabled {opacity:.6;cursor:wait}
+header.portal-banner .save-state {color:#fff;font-size:12px;flex-basis:100%;justify-content:flex-end}
+header.portal-banner .icon-btn {background:rgba(255,255,255,.15);color:#fff;border:1px solid rgba(255,255,255,.5)}
+@media(max-width:1000px){
+ header.portal-banner.portal-banner {gap:16px;margin:10px 12px 14px;padding:14px 18px;min-height:90px}
+ header.portal-banner>img,header.portal-banner .topbar-logo {width:170px;height:auto;max-width:170px;max-height:58px}
+ header.portal-banner .top-actions {flex-basis:230px;max-width:230px}
+}
+@media(max-width:680px){
+ header.portal-banner.portal-banner {flex-wrap:wrap;gap:12px;margin:8px;border-radius:14px;padding:12px;min-height:0}
+ header.portal-banner>img,header.portal-banner .topbar-logo {width:140px;height:auto;max-width:140px;max-height:48px;padding:0;border-radius:0}
+ header.portal-banner .topbar-heading,header.portal-banner>div:not(.brand):not(.top-actions) {flex:1;min-width:130px}
+ header.portal-banner .topbar-title,header.portal-banner h1,header.portal-banner strong {font-size:19px}
+ header.portal-banner .brand-subtitle,header.portal-banner p {font-size:11px}
+ header.portal-banner .top-actions {flex:1 0 100%;max-width:none;justify-content:flex-end}
+ header.portal-banner .save-state {flex-basis:auto;margin-right:auto}
+ header.portal-banner button.outline-btn,header.portal-banner .back-to-dashboard {font-size:12px;padding:8px 12px;min-height:40px}
+ header.portal-banner>.portal-banner-back {margin-left:auto}
+}
+@media print {header.portal-banner.portal-banner{display:none!important}}
+
+header.portal-banner > img,
+header.portal-banner .topbar-logo {
+  width: 280px;
+  max-width: 280px;
+  height: auto;
+  max-height: 90px;
+  background: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
+@media (max-width: 680px) {
+  header.portal-banner > img,
+  header.portal-banner .topbar-logo {
+    width: 190px;
+    max-width: 190px;
+    max-height: 65px;
+  }
+}

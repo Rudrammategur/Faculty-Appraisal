@@ -1,0 +1,13 @@
+.fw-period-content{max-width:1100px;margin:auto}
+.fw-period-heading{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin:12px 0 24px}
+.fw-period-heading h2{display:flex;align-items:center;gap:10px;margin:0}
+.fw-period-scroll{overflow-x:auto}
+.fw-period-table{border-collapse:collapse;width:100%;text-align:left}
+.fw-period-table th{background:#f8f7fb;color:#667085;font-size:14px}
+.fw-period-table th,.fw-period-table td{padding:18px 20px;border-bottom:1px solid #eaecf0}
+.fw-period-table td{font-size:16px}
+.fw-period-table tr:last-child td{border-bottom:0}
+.fw-period-buttons{display:flex;justify-content:flex-end;gap:12px;margin-top:16px}
+.fw-period-content .fw-card{margin-bottom:24px}
+.fw-period-content .fw-form select{width:100%;padding:12px;border:1px solid #d0d5dd;border-radius:8px;background:#fff;font:inherit}
+@media(max-width:600px){.fw-period-table th,.fw-period-table td{padding:14px 10px}.fw-period-heading .fw-primary{width:100%;justify-content:center}}

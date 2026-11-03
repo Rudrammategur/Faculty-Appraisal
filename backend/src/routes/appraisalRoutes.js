@@ -1,0 +1,11 @@
+const express = require('express');
+const router = express.Router();
+const controller = require('../controllers/appraisalController');
+const { requireFaculty } = require('../middleware/auth');
+const { loadAppraisalPeriod } = require('../middleware/appraisalPeriod');
+router.use(requireFaculty);
+router.get('/me', (req, res) => res.json({ success: true, data: req.user }));
+router.get('/current', loadAppraisalPeriod, controller.getCurrent);
+router.put('/draft', loadAppraisalPeriod, controller.saveDraft);
+router.post('/submit', loadAppraisalPeriod, require('../controllers/appraisalSubmissionController').submit);
+module.exports = router;

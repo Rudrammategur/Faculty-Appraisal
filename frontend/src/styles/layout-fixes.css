@@ -1,0 +1,819 @@
+/* Import this after professional-theme.css and DynamicTable.css. */
+:root {
+  --form-ink: #1b2940;
+  --form-muted: #617086;
+  --form-line: #dce2ea;
+}
+
+.app-shell {
+  font-size: 16px;
+  color: var(--form-ink);
+}
+
+.page-header h1 {
+  font-size: clamp(24px, 2vw, 29px);
+  line-height: 1.3;
+}
+
+.page-header p,
+.card-heading p,
+.section-description {
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.card-heading h2,
+.section-card h2,
+.section-card h3 {
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.app-shell input:not([type='checkbox']):not([type='radio']):not([type='file']),
+.app-shell select,
+.app-shell textarea {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.app-shell label,
+.instructional-textarea label {
+  font-size: 15px;
+}
+
+.textarea-meta,
+.innovation-char-count,
+.phd-char-count {
+  font-size: 12px;
+}
+
+/* Correct all dynamic tables without shrinking the first data column. */
+.dynamic-table-scroll {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.dynamic-table .dynamic-table-grid {
+  width: 100%;
+  min-width: 940px;
+  border-collapse: collapse;
+  table-layout: auto;
+}
+
+.dynamic-table .dynamic-table-grid th {
+  font-size: 14px;
+  line-height: 1.45;
+  font-weight: 650;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal;
+  overflow-wrap: break-word;
+  padding: 12px 9px;
+  background: #f7f8fa;
+}
+
+.dynamic-table .dynamic-table-grid td {
+  font-size: 15px;
+  vertical-align: middle;
+  padding: 9px 8px;
+}
+
+.dynamic-table .dynamic-table-grid th:not(:last-child),
+.dynamic-table .dynamic-table-grid td:not(:last-child) {
+  min-width: 125px;
+  max-width: none;
+  width: auto;
+}
+
+.dynamic-table .dynamic-table-grid th:last-child,
+.dynamic-table .dynamic-table-grid td:last-child {
+  width: 84px;
+  min-width: 84px;
+  max-width: 84px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dynamic-table.has-serial-column .dynamic-table-grid th:first-child,
+.dynamic-table.has-serial-column .dynamic-table-grid td:first-child {
+  width: 64px;
+  min-width: 64px;
+  max-width: 64px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dynamic-table .dynamic-table-grid td input,
+.dynamic-table .dynamic-table-grid td select,
+.dynamic-table .dynamic-table-grid td textarea {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  font-size: 15px;
+}
+
+.dynamic-table .dynamic-table-grid td input,
+.dynamic-table .dynamic-table-grid td select {
+  min-height: 43px;
+  padding: 8px 10px;
+}
+
+.dynamic-table .table-actions {
+  text-align: center;
+}
+
+.dynamic-table .table-actions .row-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+}
+
+/* Teaching Load has no serial column. Allocate sensible space. */
+.teaching-load-wrapper .dynamic-table-grid {
+  min-width: 1120px;
+  table-layout: fixed;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(1) {
+  width: 12%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(2) {
+  width: 34%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(3) {
+  width: 13%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(4) {
+  width: 17%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(5) {
+  width: 12%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(6) {
+  width: 10%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:nth-child(7) {
+  width: 6%;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:not(:last-child),
+.teaching-load-wrapper .dynamic-table-grid td:not(:last-child) {
+  min-width: 0;
+}
+
+.teaching-load-wrapper .dynamic-table-grid th:last-child,
+.teaching-load-wrapper .dynamic-table-grid td:last-child {
+  min-width: 100px;
+  width: 12%;
+  max-width: none;
+  padding: 12px 8px;
+  white-space: normal;
+  overflow-wrap: break-word;
+  text-align: center;
+  line-height: 1.4;
+}
+
+/* Sidebar toggle and icon-only desktop state. */
+.sidebar-collapse-row {
+  display: flex;
+  justify-content: flex-end;
+  padding: 9px 12px 2px;
+}
+
+.sidebar-collapse-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 36px;
+  padding: 6px 9px;
+  border: 1px solid var(--form-line);
+  border-radius: 8px;
+  background: white;
+  color: #612e87;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.sidebar-collapse-button:hover {
+  background: #f5effa;
+}
+
+@media (min-width: 769px) {
+  .app-layout {
+    display: flex;
+    min-width: 0;
+  }
+
+  .app-layout>.sidebar {
+    flex: 0 0 350px;
+    width: 350px;
+    min-width: 0;
+    transition: flex-basis .2s ease, width .2s ease;
+  }
+
+  .app-layout>.main {
+    flex: 1 1 0;
+    width: 0;
+    min-width: 0;
+  }
+
+  .app-layout.sidebar-collapsed>.sidebar {
+    flex-basis: 70px;
+    width: 70px;
+    overflow-x: hidden;
+  }
+
+  .sidebar.is-collapsed .period-card,
+  .sidebar.is-collapsed .sidebar-help,
+  .sidebar.is-collapsed .nav-copy {
+    display: none;
+  }
+
+  .sidebar.is-collapsed .section-nav {
+    padding: 8px 6px;
+  }
+
+  .sidebar.is-collapsed .nav-item {
+    justify-content: center;
+    padding: 9px 5px;
+  }
+
+  .sidebar.is-collapsed .nav-icon {
+    flex: 0 0 auto;
+  }
+
+  .sidebar.is-collapsed .sidebar-collapse-row {
+    justify-content: center;
+    padding: 9px 4px 2px;
+  }
+
+  .sidebar.is-collapsed .sidebar-collapse-button {
+    width: 40px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebar-collapse-row {
+    display: none;
+  }
+}
+
+/* FINAL override: keep collapsed rail visible even if earlier styles hide aside. */
+@media (min-width: 769px) {
+  .app-shell .app-layout.sidebar-collapsed {
+    display: flex !important;
+    grid-template-columns: none !important;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed>aside.sidebar {
+    display: block !important;
+    flex: 0 0 72px !important;
+    width: 72px !important;
+    min-width: 72px !important;
+    max-width: 72px !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    position: relative !important;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed>.main {
+    flex: 1 1 0 !important;
+    width: auto !important;
+    min-width: 0 !important;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed .sidebar-collapse-row,
+  .app-shell .app-layout.sidebar-collapsed .section-nav,
+  .app-shell .app-layout.sidebar-collapsed .nav-item,
+  .app-shell .app-layout.sidebar-collapsed .nav-icon {
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed .sidebar-collapse-row {
+    display: flex !important;
+    justify-content: center;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed .section-nav {
+    display: flex !important;
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed .nav-item {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 48px;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed .nav-icon {
+    display: inline-flex !important;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .app-shell .app-layout.sidebar-collapsed .nav-copy,
+  .app-shell .app-layout.sidebar-collapsed .period-card,
+  .app-shell .app-layout.sidebar-collapsed .sidebar-help {
+    display: none !important;
+  }
+}
+
+/* ===== Fixed Sidebar with Scrollable Main Content ===== */
+
+@media (min-width: 769px) {
+
+  /* App layout occupies the available screen */
+  .app-layout {
+    display: grid;
+    grid-template-columns: 340px minmax(0, 1fr);
+    height: calc(100vh - 88px);
+    overflow: hidden;
+  }
+
+  /* Sidebar stays in position */
+  .app-layout>.sidebar {
+    position: relative;
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scrollbar-width: thin;
+    background: #ffffff;
+    border-right: 1px solid #e2e8f0;
+  }
+
+  /* Only main content scrolls */
+  .app-layout>.main {
+    height: 100%;
+    min-height: 0;
+    min-width: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+  }
+
+  /* Minimized sidebar remains visible */
+  .app-layout.sidebar-collapsed {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .app-layout.sidebar-collapsed>.sidebar {
+    width: 72px;
+    min-width: 72px;
+    height: 100%;
+    overflow-y: auto;
+    visibility: visible;
+  }
+
+}
+
+/* Mobile: preserve normal page scrolling */
+@media (max-width: 768px) {
+  .app-layout {
+    height: auto;
+    overflow: visible;
+  }
+
+  .app-layout>.main {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+/* ===== FACULTY APPRAISAL - FIXED LAYOUT ===== */
+
+@media (min-width: 769px) {
+
+  /* Overall application */
+  .app-shell {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  /* Header */
+  .app-shell>.topbar {
+    flex: 0 0 auto;
+    position: relative;
+    z-index: 20;
+  }
+
+  /* Sidebar and main content */
+  .app-shell>.app-layout {
+    display: grid;
+    grid-template-columns: 230px minmax(0, 1fr);
+    flex: 1 1 auto;
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+
+  /* Expanded sidebar */
+  .app-layout>.sidebar {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    margin: 0;
+    padding: 12px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    visibility: visible;
+    background: #fff;
+    border-right: 1px solid #e2e8f0;
+    box-sizing: border-box;
+  }
+
+  /* Main form must remain visible */
+  .app-layout>.main {
+    display: block;
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 0;
+    height: 100%;
+    margin: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #f7f8fb;
+  }
+
+  /* Minimized sidebar */
+  .app-shell>.app-layout.sidebar-collapsed {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .app-layout.sidebar-collapsed>.sidebar {
+    width: 72px;
+    min-width: 0;
+    padding: 12px 6px;
+    visibility: visible;
+  }
+
+  /* Main form occupies remaining space */
+  .app-layout.sidebar-collapsed>.main {
+    width: 100%;
+    min-width: 0;
+  }
+
+  /* Keep the form centered */
+  .main .content-wrap {
+    width: 100%;
+    max-width: 1480px;
+    margin: 0 auto;
+    box-sizing: border-box;
+  }
+}
+
+/* ===== REMOVE SIDEBAR TOP GAP ===== */
+
+.sidebar {
+  margin-top: 0 !important;
+  top: 0;
+}
+
+.sidebar-toggle-bar {
+  margin: 0;
+  padding: 0;
+}
+
+/* Collapse button stays close to the header */
+.sidebar-collapse-control {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 0 8px;
+  margin: 0;
+}
+
+/* Appraisal period card */
+.sidebar .period-card {
+  margin-top: 0;
+}
+
+/* Navigation spacing */
+.sidebar .section-nav {
+  margin-top: 12px;
+}
+
+.topbar.appraisal-topbar {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-height: 80px;
+  height: auto;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  background: #fff;
+  border-bottom: 1px solid #e2dcea;
+}
+
+.appraisal-topbar .brand {
+  flex: 0 0 auto;
+}
+
+.appraisal-topbar .topbar-logo {
+  display: block;
+  width: 180px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.appraisal-topbar .topbar-heading {
+  flex: 1;
+  min-width: 0;
+  text-align: center;
+  line-height: 1.35;
+}
+
+.appraisal-topbar .topbar-title {
+  color: var(--color-primary, #612e87);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.appraisal-topbar .brand-subtitle {
+  margin: 2px 0;
+  color: #697386;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.appraisal-topbar .top-actions {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 8px;
+  max-width: 360px;
+  margin-left: auto;
+}
+
+.appraisal-topbar .back-to-dashboard {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 0;
+  padding: 8px 10px;
+  border: 1px solid #e2dcea;
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-primary, #612e87);
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.page-header .header-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: #f8f5fb;
+  color: #612e87;
+}
+
+.page-header h1 {
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.3;
+  font-weight: 650;
+  text-transform: none;
+}
+
+.page-header p {
+  margin: 5px 0 0;
+  color: #697386;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.page-header .eyebrow {
+  margin-bottom: 3px;
+  font-size: 11px;
+}
+
+@media (max-width: 900px) {
+  .topbar.appraisal-topbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 12px;
+  }
+
+  .appraisal-topbar .topbar-logo {
+    width: 140px;
+    height: 46px;
+  }
+
+  .appraisal-topbar .topbar-title {
+    font-size: 15px;
+  }
+
+  .appraisal-topbar .top-actions {
+    flex-basis: 100%;
+    max-width: none;
+  }
+}
+
+@media (max-width: 600px) {
+  .topbar.appraisal-topbar {
+    padding: 10px 14px;
+  }
+
+  .appraisal-topbar .topbar-logo {
+    height: 46px;
+    max-width: 130px;
+  }
+}
+
+.topbar-heading {
+  text-align: center;
+  font-size: 19px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.appraisal-topbar .top-actions {
+  justify-self: end;
+}
+
+@media (max-width: 1000px) {
+  .topbar.appraisal-topbar {
+    grid-template-columns: auto minmax(0, 1fr);
+  }
+
+  .appraisal-topbar .topbar-heading {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 16px;
+  }
+
+  .appraisal-topbar .top-actions {
+    grid-column: 2;
+    grid-row: 1;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+}
+
+.appraisal-topbar .topbar-heading {
+  color: #5b2c83;
+}
+.faculty-info {
+  flex: 0 0 auto;
+  padding: 14px 24px;
+  background: #fcfaff;
+  border-bottom: 1px solid #e8dff0;
+  overflow-x: auto;
+}
+
+.faculty-info-grid {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  width: 100%;
+  min-width: 0;
+}
+
+.faculty-info-grid > div {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.faculty-info-grid > div + div {
+  padding-left: 24px;
+  border-left: 1px solid #ded5e8;
+}
+
+.faculty-info-grid dt {
+  margin: 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: #756b80;
+}
+
+.faculty-info-grid dd {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: #512778;
+}
+
+.faculty-info p {
+  margin: 0;
+  font-size: 14px;
+  color: #756b80;
+}
+
+.faculty-info-grid > div:last-child {
+  flex: 1;
+  min-width: 180px;
+}
+
+.faculty-info-grid > div:last-child dd {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+/* Compact preview header — screen only */
+@media screen {
+  .application-view .av-paper {
+    padding: 14px 20px;
+  }
+
+  .application-view .av-paper > .av-heading {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    height: auto;
+    min-height: 0;
+    padding: 0 0 10px;
+    margin: 0 0 10px;
+  }
+
+  .application-view .av-paper > .av-heading img {
+    width: 190px;
+    max-width: 28%;
+    height: auto;
+    max-height: 58px;
+    object-fit: contain;
+  }
+
+  .application-view .av-paper > .av-heading > div {
+    flex: 1;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+
+  .application-view .av-paper > .av-heading h1 {
+    margin: 3px 0;
+    padding: 0;
+    font-size: 18px;
+    line-height: 1.25;
+    color: var(--color-primary-dark, #512778);
+  }
+
+  .application-view .av-paper > .av-heading p {
+    margin: 2px 0;
+    padding: 0;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .application-view .av-paper > .av-heading strong {
+    display: block;
+    margin: 3px 0 0;
+    font-size: 12px;
+    line-height: 1.3;
+  }
+
+  .application-view .av-paper > .av-muted {
+    margin: 8px 0 12px;
+    font-size: 12px;
+    line-height: 1.4;
+  }
+}
